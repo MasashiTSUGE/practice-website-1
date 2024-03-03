@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- gitコミットテスト -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Noto+Serif+JP&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/destyle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 外部ライブラリを利用して郵便番号検索を実装 -->
+    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- トップへリンク用のdiv -->
+    <div id="top"></div>
+    <div class="layout">
+        <!-- ヘッダー領域 -->
+        <header id="header">
+            <img src="img/header_logo.svg" alt="logo">
+            <!-- 開閉式メニュー -->
+            <nav class="gmenu">
+                <!-- チェックボックスでメニューの開閉を操作する -->
+                <input type="checkbox" class="menubutton" id="menubutton">
+                <!-- アイコンになる要素 -->
+                <label class="menuicon" for="menubutton"><span class="navicon"></span></label>
+                <!-- メニュー本文 -->
+                <ul>
+                    <li class="serif"><a href="#concept">コンセプト</a></li>
+                    <li class="serif"><a href="#service">サービス</a></li>
+                    <li class="serif"><a href="#flow">施工の流れ</a></li>
+                    <li class="serif"><a href="#faq">よくある質問</a></li>
+                    <li class="serif"><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- トップ画像のセクション -->
+        <section class="top">
+            <!-- トップはbgで描画しようと思ったものの、h1を使用しないとバリデータでエラーが出るためhero画像をh1に -->
+            <h1><img src="img/bg_hero_sp.jpg" alt="トップ画像">
+            </h1>
+        </section>
+        <!-- コンセプトセクション　ここから各セクションはページ内リンクのためにidを振る -->
+        <section class="concept" id="concept">
+            <!-- 各セクション見出しをh2、サブタイトルはクラス付け -->
+            <h2 class="serif">concept</h2>
+            <p class="subtitle serif"><span class="line">コンセプト</span></p>
+            <h3>家族が笑顔になれる場所</h3>
+            <p class="ls">家族が集う、温かく居心地のいい空間づくりを目指して、幅広い年代の方に安心して過ごしていただける空間づくりや、お手入れのしやすい素材を使用したリフォームをご提案いたします。</p>
+        </section>
+        <!-- サービスセクション -->
+        <section class="service" id="service">
+            <h2 class="serif">service</h2>
+            <p class="subtitle serif">サービス</p>
+            <!-- 各項目はpcページフレックスレイアウト採用することも込みでliを使用 -->
+            <ul>
+                <li><img src="img/service_bathroom.jpg" alt="bathroom">
+                    <h3 class="serif">浴室</h3>
+                    <p>ご家族が一緒に入れる広めの浴槽や手すり等、安全性に配慮しています。</p>
+                    <a href="#">
+                        <p class="link">more</p>
+                    </a>
+                </li>
+                <li><img src="img/service_living.jpg" alt="livingroom">
+                    <h3 class="serif">リビング</h3>
+                    <p>照明や家具の配置等、くつろぎやすい空間づくりを大切にしています。</p>
+                    <a href="#">
+                        <p class="link">more</p>
+                    </a>
+                </li>
+                <li>
+                    <img src="img/service_kitchen.jpg" alt="kitchen">
+                    <h3 class="serif">キッチン</h3>
+                    <p>機能性だけでなく、デザイン性にもこだわっております</p>
+                    <a href="#">
+                        <p class="link">more</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- フローセクション -->
+        <section class="flow" id="flow">
+            <h2 class="serif">flow</h2>
+            <p class="subtitle serif">施工の流れ</p>
+            <!-- 飾り文字の部分と、空divの装飾で作る矢印をそれぞれulで（pcページフレックスレイアウト使用するため） -->
+            <ul>
+                <li>
+                    <p class="flowlist">ご相談</p>
+                </li>
+                <li>
+                    <div class="allow"></div>
+                </li>
+                <li>
+                    <p class="flowlist">現地調査</p>
+                </li>
+                <li>
+                    <div class="allow"></div>
+                </li>
+                <li>
+                    <p class="flowlist">お見積り</p>
+                </li>
+                <li>
+                    <div class="allow"></div>
+                </li>
+                <li>
+                    <p class="flowlist">ご契約</p>
+                </li>
+                <li>
+                    <div class="allow"></div>
+                </li>
+                <li>
+                    <p class="flowlist">施工</p>
+                </li>
+                <li>
+                    <div class="allow"></div>
+                </li>
+                <li>
+                    <p class="flowlist">お引渡し</p>
+                </li>
+            </ul>
+        </section>
+        <!-- よくある質問セクション -->
+        <section class="faq" id="faq">
+            <h2 class="serif">Q&amp;A</h2>
+            <p class="subtitle serif">よくあるご質問</p>
+            <!-- "Q."と"A."に飾りをつけるためにspan -->
+            <!-- コンテンツの整列のためインデントをつける部分をクラス分け -->
+            <p class="indent">
+                <span class="serif">Q.</span>見積もりは無料ですか&quest;
+            </p>
+            <p class="indent">
+                <span class="serif">A.</span>はい、お見積りは無料で承っております。ホームページよりお気軽にお問い合わせください。
+            </p>
+            <p class="indent">
+                <span class="serif">Q.</span>普段通り生活をしながらのリフォーム工事は可能ですか&quest;
+            </p>
+            <p class="indent">
+                <span
+                    class="serif">A.</span>はい。もちろん可能です。工事中の箇所は、何日間か使用できなくなる場合もございますのであらかじめご了承ください。大型リフォームの場合には、仮住まいもお薦めしております。
+            </p>
+        </section>
+        <!-- お問い合わせセクション -->
+        <section class="contact" id="contact">
+            <h2 class="serif">contact</h2>
+            <p class="subtitle serif">お問い合わせ</p>
+            <!-- 郵便番号検索を有効化するためのクラス設定とspanタグ -->
+            <form name="form01" class="h-adr">
+                <span class="p-country-name" style="display:none;">Japan</span>
+                <p class="bold left needmargin">お問い合わせ種別<span class="must">必須</span></p>
+                <p class="right needmargin2">
+                    <input type="radio" name="reqtype" id="docrequest" value="docrequest" required>
+                    <input type="radio" name="reqtype" id="consulting" value="consulting" required>
+                    <label for="docrequest"><span class="radio" id="left">資料請求</span></label>
+                    <label for="consulting"><span class="radio" id="right">ご相談</span></label>
+                </p>
+                <p class="bold left">お名前<span class="must">必須</span></p>
+                <div class="right"><input type="text" class="name" name="criantname" required></div>
+                <p class="bold left">フリガナ<span class="must">必須</span></p>
+                <div class="right"><input type="text" class="name" name="criantname_lead" required></div>
+                <p class="bold left">電話番号<span class="must">必須</span></p>
+                <div class="right"><input type="tel" name="phonenumber" required></div>
+                <p class="bold left">住所<span class="must">必須</span></p>
+                <div class="right">
+                    <p class="adressnumber"><span>&#12306;</span><input type="text" class="p-postal-code"
+                            name="adressnumber" required></p>
+                    <input type="text" class="adress p-region p-locality p-street-address p-extended-address"
+                        name="adress" required>
+                </div>
+                <p class="bold left">メールアドレス<span class="must">必須</span></p>
+                <div class="right"><input type="email" name="mailadress" required></div>
+                <p class="bold left">メールアドレス(確認用)<span class="must">必須</span></p>
+                <div class="right">
+                    <input type="email" name="mailcheck" required>
+                    <!-- メールアドレス確認用のテキスト -->
+                    <span class="mailwrongallert" id="mailwrongallert" style="display:none;">メールアドレスが一致していません</span>
+                </div>
+                <p class="bold left">お問い合わせ内容</p>
+                <div class="right"><textarea name="textarea" id="test" cols="30" rows="10"></textarea></div>
+                <!-- 確認ボタンに矢印をつけるためdivで囲う -->
+                <div class="buttonallow"><input type="submit" value="入力内容を確認する" class="submitbutton serif"></div>
+            </form>
+        </section>
+        <!-- フッターセクション -->
+        <footer>
+            <!-- トップ行きリンク -->
+            <a href="#top">
+                <div class="gototop" id="gototop"></div>
+            </a>
+            <p class="copyright serif">&copy;design house renovations</p>
+        </footer>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1133 @@
+@charset "UTF-8";
+
+/* git change test */
+/* カスタムプロパティの設定 */
+:root {
+    --red: #b71B26;
+    --blue: #223E69;
+    --black: #333333;
+    --white: #FFFFFF;
+    --gray: #EEEEEE;
+
+}
+
+/* color code preset #B71B26 #223E69 #FFFFFF #333333 */
+/* フォントファミリーの設定 */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+.serif {
+    font-family: 'Noto Serif JP', serif;
+    letter-spacing: 0.1em;
+}
+
+/* ページ全体のフォントとマージンの設定 */
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+/* h2下のサブタイトルと横線 */
+.subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-bottom: 17px;
+    font-weight: bold;
+}
+
+.subtitle:before {
+    content: "";
+    border-top: 1px solid;
+    width: 60px;
+    margin-right: 8px;
+}
+
+.subtitle:after {
+    content: "";
+    border-top: 1px solid;
+    width: 60px;
+    margin-left: 8px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.footer {
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+/* ヘッダ領域の作成 */
+header {
+    padding: 0px 12px;
+}
+
+header img {
+    width: 240px;
+    height: 20px;
+    margin-top: 16px;
+    margin-bottom: 14px;
+}
+
+/* ハンバーガーメニュー */
+/* チェックボックスがオフの場合のスタイル */
+/* navを画面上部に固定 */
+.gmenu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+/* チェックボックスを非表示に */
+.gmenu .menubutton {
+    display: none;
+}
+
+/* アイコンの位置を右上に固定 */
+.gmenu .menuicon {
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    padding-top: 5px;
+    height: 10px;
+    cursor: pointer;
+}
+
+/* span要素で三本線を作成 */
+.gmenu .menuicon .navicon {
+    display: block;
+    background-color: var(--red);
+    height: 2px;
+    width: 30px;
+    position: relative;
+    transition: all 0.4s ease-out;
+}
+
+/* 上と下に線を表示 */
+.gmenu .menuicon .navicon::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: var(--red);
+    top: -10px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease-out;
+}
+
+.gmenu .menuicon .navicon::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: var(--red);
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease-out;
+
+}
+
+/* メニュー部分のスタイルを設定 */
+.gmenu ul {
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    /* チェックが入ってないときに中が見えないようにする設定 */
+    overflow: hidden;
+    /* 高さを0にすることによって非表示にする */
+    max-height: 0;
+    transition: all 0.6s;
+}
+
+/* メニュー上の半透明部分をパディングで設定 */
+.gmenu .menubutton:checked~ul:first-of-type {
+    padding-top: 60px;
+}
+
+/* 文字部分、リンク部分のスタイル */
+.gmenu ul a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0;
+    margin-bottom: 6px;
+}
+
+/* リンクホバー時のbgcolor */
+.gmenu ul a:hover {
+    background-color: var(--gray);
+}
+
+/* ちえっくが入ったときに高さを設定して、画面に表示させる、ある程度ぴったりのサイズに設定しないとアニメーションの動きがあまりよくない */
+.gmenu .menubutton:checked~ul {
+    max-height: 800px;
+    height: 532px;
+}
+
+.gmenu .menubutton:checked~.menuicon .navicon {
+    /* bgcolorで線を表現しているので、透明にすることによって消す */
+    background-color: transparent;
+}
+
+.gmenu .menubutton:checked~.menuicon .navicon::after {
+    /* 線を回転させて×マークを作成する */
+    transform: rotate(45deg);
+    top: 0px;
+}
+
+.gmenu .menubutton:checked~.menuicon .navicon::before {
+    transform: rotate(-45deg);
+    top: 0px;
+}
+
+/* メニューここまで */
+/* top領域の指定 */
+.top {
+    height: 59vh;
+    margin-bottom: 49px;
+    background: url(../img/bg_hero_sp.jpg) center/cover;
+}
+
+/* top画像をtop領域のbackgroundで表示したいためimgのほうは非表示に */
+.top h1 img {
+    display: none;
+}
+
+/* concept */
+.concept {
+    padding: 0 12px;
+    margin-bottom: 78px;
+}
+
+.concept p {
+    line-height: 2.0;
+}
+
+/* sevice */
+.service {
+    padding: 0 11px;
+}
+
+.service h2 {
+    margin-bottom: 5px;
+}
+
+.service .subtitle {
+    margin-bottom: 23px;
+}
+
+.service ul li img {
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 100%;
+    height: 248px;
+    margin-bottom: 6px;
+    object-fit: cover;
+}
+
+.service ul li h3 {
+    margin-bottom: 6px;
+}
+
+.service ul li p {
+    margin-bottom: 4px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* リンク部分とリンク部分の矢印、およびマウスオーバー時のスタイル */
+.service ul li .link {
+    text-align: right;
+    margin-bottom: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.service ul li .link:hover {
+    text-decoration: underline var(--blue);
+    color: var(--blue);
+}
+
+.service ul li .link::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 5px solid transparent;
+    border-left: 5px solid #333333;
+    margin-top: 5px;
+    margin-left: 4px;
+
+}
+
+/* 下ページとのマージンをlast-childにつける */
+.service ul li:last-child {
+    margin-bottom: 75px;
+}
+
+/* flow */
+/* liにマージンが6pxついてるためこちらの下paddingは10px */
+.flow {
+    padding: 16px 0px 7px;
+    background-color: #EEEEEE;
+
+}
+
+.flow h2 {
+    margin-bottom: 4px;
+}
+
+.flow .subtitle {
+    color: var(--red);
+    margin-bottom: 24px;
+}
+
+.flow ul li p {
+    font-size: 16px;
+}
+
+.flow ul li {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 8px;
+}
+
+.flow ul li p {
+    text-align: center;
+    width: 300px;
+    height: 32px;
+    background-color: var(--black);
+    border-radius: 16px;
+    padding-top: 6px;
+    color: var(--white);
+}
+
+/* 空divを装飾し矢印に */
+.allow {
+    width: 32px;
+    height: 16px;
+    background-color: var(--red);
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+/* 矢印色のグラデーション */
+.flow ul li:nth-child(2) .allow {
+    opacity: 0.6;
+}
+
+.flow ul li:nth-child(4) .allow {
+    opacity: 0.7;
+}
+
+.flow ul li:nth-child(6) .allow {
+    opacity: 0.8;
+}
+
+.flow ul li:nth-child(8) .allow {
+    opacity: 0.9;
+}
+
+/* FAQ */
+.faq {
+    padding: 0 8px;
+}
+
+.faq h2 {
+    margin-top: 78px;
+    margin-bottom: 5px;
+}
+
+.faq .subtitle {
+    color: var(--blue);
+    margin-bottom: 25px
+}
+
+.faq .indent {
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* クラスにインデントを指定（クラスつけないとサブタイトルの棒がずれる） */
+.faq .indent {
+    line-height: 1.48;
+    padding-left: 46px;
+    text-indent: -42px;
+}
+
+.faq .indent span {
+    font-size: 20px;
+    margin-left: 9px;
+    margin-right: 9px;
+    position: relative;
+    color: var(--white);
+}
+
+/* QとAで下マージンが違うためそれぞれに設定 */
+.faq .indent:nth-child(odd) {
+    margin-bottom: 22px;
+}
+
+.faq .indent:nth-child(5) {
+    margin-bottom: 18px;
+}
+
+.faq .indent:nth-child(even) {
+    margin-bottom: 24px;
+}
+
+/* QとAの丸装飾 */
+.faq .indent span::before {
+    content: "";
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background-color: var(--black);
+    border-radius: 52px;
+    z-index: -1;
+    left: -9px;
+    top: -1px;
+
+}
+
+/* evenでAを特定して色を変更 */
+.faq .indent:nth-child(even) span::before {
+    background-color: var(--red);
+}
+
+/* 最下部のマージンを上書き */
+.faq .indent:last-child {
+    margin-bottom: 80px;
+}
+
+/* contact */
+.contact {
+    background-color: var(--gray);
+    padding: 15px 12px 20px;
+    margin-bottom: 126px;
+}
+
+.contact h2 {
+    margin-bottom: 5px;
+}
+
+.contact .subtitle {
+    margin-bottom: 22px;
+}
+
+/* フォーム部分のスタイル */
+.contact form {
+    text-align: center;
+}
+
+.contact form .right {
+    position: relative;
+}
+
+/* フォーム全体の文章のスタイル */
+.contact form p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.contact form .needmargin {
+    margin-bottom: 15px;
+}
+
+
+/* 太字にしている部分をboldクラスで装飾、必須部分をspanで装飾 */
+.contact .bold {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* 必須の装飾は幅を持たせるためinline-blockで */
+.contact p .must {
+    display: inline-block;
+    background-color: var(--red);
+    width: 40px;
+    height: 18px;
+    border-radius: 8px;
+    font-size: 10px;
+    color: var(--white);
+    vertical-align: 2px;
+    padding-top: 3px;
+    margin-left: 2px;
+
+}
+
+.contact form .needmargin2 {
+    margin-bottom: 24px;
+}
+
+/* オリジナルのラジオボタンを設定するためデフォルトのボタンをnoneに */
+.contact form input[type=radio] {
+    display: none;
+}
+
+/* beforeでボタンを作るためrelativeに、左右のラベル間隔はpaddingで設定 */
+.contact .radio {
+    position: relative;
+    padding-left: 38px;
+    padding-right: 15px;
+}
+
+.contact .radio::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    position: absolute;
+    background-color: var(--white);
+    left: 18px;
+}
+
+/* ボタンチェック時のスタイル */
+#docrequest:checked~label #left::before,
+#consulting:checked~label #right:before {
+    background-color: var(--white);
+    border: 4.5px solid var(--blue);
+}
+
+#docrequest:checked~label #left,
+#consulting:checked~label #right {
+    font-weight: bold;
+}
+
+/* 選択してない側の透明度を下げてわかりやすくする */
+#docrequest:checked~label #right,
+#consulting:checked~label #left {
+    opacity: 0.5;
+}
+
+/* インプットボックス各種のスタイル設定 */
+input[type=text],
+input[type=email],
+textarea,
+input[type=tel] {
+    width: 100%;
+    height: 32px;
+    background-color: var(--white);
+    margin-bottom: 23px;
+    padding-left: 4px;
+    text-align: left;
+    vertical-align: top;
+    padding-top: 2px;
+}
+
+/* サイズの個別設定 */
+textarea {
+    height: 120px;
+}
+
+.adressnumber {
+    text-align: left;
+    margin-bottom: 8px;
+    height: 32px;
+}
+
+/* タグの関係でフォントサイズがずれたため個別に再設定 */
+.adressnumber input[type=text] {
+    width: 125px;
+    margin-left: 4px;
+    font-size: 16px;
+}
+
+/* 〒マークの縦位置を変更するためdisplayをinline-blockに設定しmt与える */
+.adressnumber span {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* メールアドレス確認用不一致時に表示させる文字のスタイル */
+.mailwrongallert {
+    position: absolute;
+    top: 33px;
+    left: 4px;
+    font-weight: bold;
+    font-size: 0.7em;
+    color: var(--red);
+}
+
+/* 確認ボタンと矢印、マウスオーバー時の装飾 */
+.submitbutton {
+    display: inline-block;
+    font-size: 16px;
+    width: 200px;
+    height: 48px;
+    background-color: var(--black);
+    color: var(--white);
+    transition: 1.3s;
+}
+
+.submitbutton:hover {
+    background-color: var(--red);
+}
+
+.buttonallow:hover {
+    transform: translateX(15px);
+}
+
+/* 矢印はボタンではなくボタン回りのdivのafterでないとつけられなかった */
+.buttonallow {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    transition: all 0.5s;
+}
+
+.buttonallow::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 6px solid transparent;
+    border-left: 6px solid var(--white);
+    margin-right: 4px;
+    margin-left: 4px;
+    top: 17px;
+    right: 0px;
+}
+
+/* footer */
+footer {
+    display: flex;
+    width: 100%;
+    background-color: var(--black);
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+footer p {
+    font-size: 12px;
+    text-align: center;
+    color: var(--white);
+}
+
+/* gototopリンクの装飾、fixedで画面右下に固定 */
+.gototop {
+    position: fixed;
+    width: 46px;
+    height: 46px;
+    background-color: var(--black);
+    bottom: -100px;
+    right: 12px;
+    transition: all 0.5s;
+    opacity: 0.5;
+}
+
+.gototop::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-left: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    bottom: 6px;
+    right: 12.5px;
+    transform: rotate(135deg);
+}
+
+.gototop:hover {
+    transform: translateY(-5px);
+    background-color: var(--red);
+    opacity: 1.0;
+}
+
+/* pc版ページのレイアウト */
+@media screen and (min-width:768px) {
+
+    /* ヘッダー領域の変更 */
+    header {
+        padding-left: 24px;
+        padding-right: 0px;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        background-color: var(--white);
+        transition: all 700ms;
+        z-index: 100;
+        justify-content: space-between;
+    }
+
+    header img {
+        width: 400px;
+        height: 36px;
+        object-fit: contain;
+        margin-top: 24px;
+        margin-bottom: 21px;
+    }
+
+    /* ヘッダー領域をフレックス＞ナビ内をフレックスでロゴ画像とナビを両方横並びに */
+    header nav ul {
+        display: flex;
+        max-width: 640px;
+        margin-left: auto;
+        justify-content: space-around;
+    }
+
+
+    /* メニュを通常表示するためstaticに変更 */
+    .gmenu {
+        position: static;
+        max-width: 680px;
+    }
+
+    /* メニューアイコンは非表示に */
+    .gmenu .menuicon .navicon {
+        display: none;
+    }
+
+    /* max-heightを再設定してli項目を常時表示するように */
+    .gmenu ul {
+        max-height: 100%;
+    }
+
+    /* li項目の大きさ(padding)がそのままだと大きすぎて小さめのpc画面だと表示崩れを起こすため、再設定 */
+    .gmenu ul a {
+        padding: 16px 5px 16px 5px;
+        margin: 0 auto;
+        letter-spacing: 0.1em;
+    }
+
+    /* リンク部分が小さくなって、各ボタン間に隙間ができたためマウスオーバー時のスタイルを違和感がないように変更 */
+    .gmenu ul a:hover {
+        background-color: var(--white);
+        font-weight: 800;
+        text-shadow: 2px 2px 2px rgba(50, 50, 50, 0.1);
+    }
+
+
+    /* ヘッダー領域の変更ここまで */
+    /* 以下vwに応じて横幅制定（topとfooter、背景色のある部分領域を設定していない) */
+    .concept,
+    .faq,
+    .service {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    /* 文字サイズの変更 */
+    h2 {
+        font-size: 42px;
+        margin-bottom: 16px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        margin-bottom: 48px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    /* top */
+    /* top画像、margin-bottomの変更 */
+    /* header部分を浮かせたため、空divにサイズをつけてbody領域を確保 */
+    #top {
+        height: 80px;
+    }
+
+    .top {
+        height: 545px;
+        background: url(../img/bg_hero_pc.jpg) no-repeat center/cover;
+    }
+
+    .top {
+        margin-bottom: 158px;
+    }
+
+    /* concept */
+    /* 余白、行間、文字サイズ調整 */
+    .concept {
+        max-width: 1044px;
+    }
+
+    .concept h2 {
+        margin-bottom: 8px;
+    }
+
+    .concept .subtitle {
+        margin-bottom: 38px;
+
+    }
+
+    .concept h3 {
+        margin-bottom: 20px;
+    }
+
+    .concept p:last-child {
+        font-size: 16px;
+        line-height: 2.0;
+        margin-bottom: 160px;
+    }
+
+    /* service */
+    /* 各項目を横に並べるためフレックスレイアウトに */
+    .service {
+        max-width: 1044px;
+    }
+
+    .service .subtitle {
+        margin-bottom: 48px;
+    }
+
+    .service ul {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 80px;
+    }
+
+    /* リストのサイズを指定 */
+    .service ul li {
+        width: 300px;
+        height: 350px;
+    }
+
+    /* 画像のサイズを指定 */
+    .service ul li img {
+        width: 300px;
+        height: 210px;
+        margin-bottom: 12px;
+    }
+
+    /* 行間の変更 */
+    .service ul li h3 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .service ul li p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+
+    .service ul li .link {
+        line-height: 1.0;
+    }
+
+    /* flow */
+
+    .flow {
+        padding-top: 46px;
+        margin-bottom: 0px;
+        padding-bottom: 40px;
+    }
+
+    .flow h2 {
+        margin-bottom: 12px;
+    }
+
+    .flow .subtitle {
+        margin-bottom: 48px;
+    }
+
+    /* リストをフレックス化、最大幅の制定、縦方向中央ぞろえ */
+    .flow ul {
+        display: flex;
+        max-width: 950px;
+        margin: 0 auto;
+        align-items: center;
+        margin-bottom: 0px;
+        justify-content: space-between;
+    }
+
+    /* 文字を縦書きに */
+    .flow ul li p {
+        border-radius: 60px;
+        width: 60px;
+        height: 280px;
+        writing-mode: vertical-rl;
+        text-align: center;
+        font-size: 28px;
+        line-height: 1.0;
+        padding-right: 16px;
+        margin: 0;
+    }
+
+    /* 矢印を横向きに */
+    .flow ul li div {
+        transform: rotate(-90deg);
+        width: 60px;
+        height: 30px;
+
+    }
+
+    /* faq */
+    .faq {
+        width: 1020px;
+    }
+
+    .faq h2 {
+        margin-top: 160px;
+        margin-bottom: 12px;
+    }
+
+    .faq .subtitle {
+        margin-bottom: 50px;
+    }
+
+    .faq {
+        padding-left: 16px;
+    }
+
+    /* よくある質問セクション文字サイズ等の変更 */
+    .faq .indent {
+        line-height: 1.5;
+        font-size: 20px;
+        text-indent: -60px;
+        padding-left: 60px;
+    }
+
+    .faq .indent:nth-child(odd) {
+        margin-bottom: 31px;
+    }
+
+    .faq .indent:nth-child(even) {
+        margin-bottom: 62px;
+    }
+
+    .faq .indent:last-child {
+        margin-bottom: 158px;
+    }
+
+    .faq .indent span {
+        font-size: 34px;
+        line-height: 1.0;
+    }
+
+    .faq .indent span:nth-child(odd)::before {
+        width: 52px;
+        height: 52px;
+        top: 3px;
+    }
+
+    .faq .indent span:nth-child(even)::before {
+        width: 52px;
+        height: 52px;
+        top: 3px;
+    }
+
+    /* contact */
+    .contact {
+        padding-bottom: 1px;
+    }
+
+    .contact h2 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .contact .subtitle {
+        margin-bottom: 46px;
+    }
+
+    /* フォーム部分のmax-widthを設定し最大ブレイクポイントに、フォーム部分をフレックスボックスレイアウトに */
+    .contact form {
+        max-width: 1020px;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 48px;
+        margin-bottom: 48px;
+
+    }
+
+    /* フレックス部分のプロパティ(30%右詰、70%左詰め) */
+    .contact form .left {
+        flex-basis: 33%;
+        text-align: right;
+        padding-right: 6px;
+    }
+
+    .contact form .left span {
+        text-align: center;
+    }
+
+    .contact form .right {
+        flex-basis: 67%;
+    }
+
+    .contact form .right {
+        text-align: left;
+        padding-right: 24px;
+        padding-left: 5px;
+    }
+
+    /* 文字サイズや余白の調整 */
+    /* お問い合わせ内容に上手く余白をつけられなかったたためクラス分け */
+    .contact form .needmargin {
+        padding-bottom: 45px;
+    }
+
+    .contact form p,
+    .contact form .bold {
+        font-size: 20px;
+        margin-bottom: 9px;
+    }
+
+    .contact form .needmargin {
+        margin-bottom: 7px;
+    }
+
+    .contact p .must {
+        margin-left: 8px;
+    }
+
+    .contact .radio {
+        padding-left: 34px;
+        padding-right: 30px;
+    }
+
+    .contact .radio::before {
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+        left: 6px;
+        top: 4px;
+    }
+
+    #docrequest:checked~label #left::before,
+    #consulting:checked~label #right:before {
+        background-color: var(--white);
+        border: 7px solid var(--blue);
+    }
+
+    .contact form p .must {
+        font-size: 16px;
+        width: 58px;
+        height: 24px;
+        border-radius: 8px;
+        vertical-align: -1px;
+    }
+
+    .contact form .name,
+    .contact form input[type=tel] {
+        height: 52px;
+        width: 332px;
+    }
+
+    .contact form .adressnumber span {
+        margin-top: 0;
+    }
+
+    .contact form .adressnumber input[type=text] {
+        width: 222px;
+        margin-bottom: 25px;
+    }
+
+    .contact form .right input[type=text],
+    .contact form .right input[type=email] {
+        height: 52px;
+
+    }
+
+    .contact form textarea {
+        padding-top: 4px;
+        height: 208px;
+        margin-bottom: 52px;
+    }
+
+    input[type=text],
+    input[type=email],
+    textarea,
+    input[type=tel],
+    .adressnumber input[type=text],
+    .adressnumber span {
+        font-size: 20px;
+    }
+
+    .mailwrongallert {
+        top: 53px;
+    }
+
+    /* ボタンの変更 */
+    .contact form input[type=submit] {
+        width: 300px;
+        height: 68px;
+        margin-bottom: 48px;
+        font-size: 20px;
+        transform: translateX(12px);
+    }
+
+    .submitbutton:hover {
+        transform: translateX(30px);
+    }
+
+    .contact form .buttonallow::after {
+        height: 10px;
+        width: 10px;
+        border: 10px solid transparent;
+        border-left: 10px solid #FFF;
+        top: 25px;
+
+    }
+
+    .contact form .adress {
+        width: 100%;
+    }
+
+    .contact form .adressnumber {
+        height: auto;
+        margin-bottom: 0px;
+    }
+
+    .contact {
+        margin-bottom: 220px;
+    }
+
+    /* footer */
+    /* サイズ変更 */
+    footer {
+        height: 62px;
+    }
+
+    .copyright {
+        font-size: 14px;
+    }
+
+    /* 再下端到達時のbottom=62px */
+    .gototop {
+        width: 60px;
+        height: 60px;
+        bottom: -150px;
+        right: 12px;
+    }
+
+    .gototop::after {
+        width: 32px;
+        height: 32px;
+        right: 14px;
+    }
+
+    .gototop:hover {
+        transform: translateY(-10px);
+    }
+
+}
